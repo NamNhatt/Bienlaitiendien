@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package quanlitiendien;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+import java.util.*;
+/**
+ *
+ * @author Minh Chau
+ */
+//Khoi tao class BienLai . Vi Bienlai chua thong tin khach hang nen thuoc tinh ke thua duoc su dung (extends)
+public class BienLai extends khachHang{
+    private int chiSoMoi;
+    private int chiSoCu;
+// Khoi tao constructor
+    public BienLai( String tenChuHo,String diaChi, String maCongTo, int chiSoMoi, int chiSoCu ){
+        super(tenChuHo,diaChi,maCongTo);  // dung thuoc tinh cua khachHang
+        this.chiSoMoi=chiSoMoi;
+        this.chiSoCu=chiSoCu;
+    }
+  //Khoi tao getter setter
+    public int getChiSoMoi() {
+        return chiSoMoi;
+    }
+    
+    public void setChiSoMoi(int chiSoMoi) {
+        this.chiSoMoi = chiSoMoi;
+    }
+
+    public int getChiSoCu() {
+        return chiSoCu;
+    }
+
+    public void setChisoCu(int chiSoCu) {
+        this.chiSoCu = chiSoCu;
+    }
+// Khoi tao ham tinh toan 
+    public long getSoTienPhaiTra() {
+        return (this.chiSoMoi-this.chiSoCu)*750;
+    }
+// In ra cac thong tin can thiet
+    @Override
+    public String toString() {
+        return super.toString() +" Chi so moi la : " +this.chiSoMoi +" "+"Chi so cu la : "+this.chiSoCu+" So tien phai tra la : " + this.getSoTienPhaiTra()+" DVT ";
+    }
+}
